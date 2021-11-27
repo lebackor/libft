@@ -19,7 +19,7 @@ int ft_isalnum(int a)
 		return (0);
 }
 
-#include <libc.h>
+#include <stdio.h>
 #include <ctype.h>
 int main(int ac, char **av)
 {
