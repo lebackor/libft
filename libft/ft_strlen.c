@@ -9,7 +9,7 @@
 /*   Updated: 2021/11/23 16:37:54 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 size_t ft_strlen(char *str)
 {
 	int i;
@@ -19,14 +19,4 @@ size_t ft_strlen(char *str)
 		i++;
 	return (i);
 
-}
-#include <string.h>
-#include <libc.h>
-
-int main(int ac, char **av)
-{
-	(void) ac;
-
-	printf("%lu\n", strlen(av[1]));
-	printf("%zu\n", ft_strlen(av[1]));
 }

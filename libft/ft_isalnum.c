@@ -9,6 +9,7 @@
 /*   Updated: 2021/11/23 16:21:08 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int ft_isalnum(int a)
 {
@@ -17,14 +18,4 @@ int ft_isalnum(int a)
 		return (1);
 	else
 		return (0);
-}
-
-#include <stdio.h>
-#include <ctype.h>
-int main(int ac, char **av)
-{
-	(void) ac;
-
-	printf("%d\n", isalnum(av[1][0]));
-	printf("%d\n", ft_isalnum(av[1][0]));
 }
