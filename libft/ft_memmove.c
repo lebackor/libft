@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 18:14:38 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/01 19:03:45 by lebackor         ###   ########.fr       */
+/*   Created: 2021/12/01 19:04:21 by lebackor          #+#    #+#             */
+/*   Updated: 2021/12/01 19:24:50 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned const char *s1;
 	unsigned char *d1;
@@ -23,24 +23,30 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	if (s1 == NULL && d1 == NULL)
 		return ((void *) d1);
-	while (i < n)
+	if (s1 > d1)
 	{
-		d1[i] = s1[i];
-		i++;
+		while (len-- > 0)
+		{
+			d1[len] = s1[len];
+		}
+
+	}
+	else
+	{
+		while (i < len)
+		{
+			d1[i] = s1[i];
+			i++;
+		}
 	}
 	return ((void *)d1);
 }
-/*#include <stdio.h>
+/*
 #include <libc.h>
 int main(int ac, char **av)
 {
 	(void) ac;
-	(void) av;
 
-	printf("%s\n", ft_memcpy(av[1], av[2], atoi(av[3])));
-	//printf("%s\n", memcpy("hello", "howareyou", 5));
-	//ft_memcpy(dest, src, 1);
-	
-//	printf("src =%s\n dest =%s\n", src, dest);
-}
-*/
+	printf("%s\n", ft_memmove(av[1], av[2], atoi(av[3])));
+	printf("%s\n", memmove(av[1], av[2], atoi(av[3])));
+}*/
