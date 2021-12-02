@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:32:26 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/02 14:50:54 by lebackor         ###   ########.fr       */
+/*   Created: 2021/12/02 11:17:06 by lebackor          #+#    #+#             */
+/*   Updated: 2021/12/02 11:52:33 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlcpy(char  *dest, const char  *src, size_t size)
+
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	size_t	k;
+	unsigned const char *s1;
+	size_t i;
 
 	i = 0;
-	k = 0;
-	if (size != 0)
+	s1 = (unsigned const char *)s;
+
+	while (i < n)
 	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		if (s1[i] == (unsigned const char )c)
+			return ((void *)&s1[i]);
+		i++;
 	}
-	while (src[k] != '\0')
-		k++;
-	return (k);
+	return (NULL);
 }
+/*
+#include <libc.h>
+
+int main(int ac, char **av)
+{
+	(void) ac;
+	printf("%s\n", ft_memchr(av[1], atoi(av[2]), atoi(av[3])));
+	printf("%s\n", memchr(av[1], atoi(av[2]), atoi(av[3])));
+
+}
+*/

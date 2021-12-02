@@ -1,51 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:04:21 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/02 13:28:24 by lebackor         ###   ########.fr       */
+/*   Created: 2021/12/02 11:53:39 by lebackor          #+#    #+#             */
+/*   Updated: 2021/12/02 12:07:50 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *s1;
-	unsigned char *d1;
+	unsigned const char *s_1;
+	unsigned const char *s_2;
 	size_t i;
 
-	s1 = (unsigned char *)src;
-	d1 = (unsigned char * )dst;
+	s_1 = (unsigned const char *)s1;
+	s_2 = (unsigned const char *)s2;
 	i = 0;
-	if (s1 == NULL && d1 == NULL)
-		return ((void *) d1);
-	if (d1 > s1)
+	if (s_1 == NULL && s_2 == NULL)
+		return (0);
+	while (i < n)
 	{
-		while (i < len)
-		{
-			d1[i] = s1[ i];
-			i++;
-		}
+		if (s_1[i] != s_2[i])
+			return (s_1[i] - s_2[i]);
+		i++;
 	}
+	if (i >= n)
+		return (0);
 	else
-	{
-		while (len-- > 0)
-		{
-			d1[len + i] = s1[len+ i];
-		}
-	}
-	return ((void *)d1);
+		return (s_1[i] - s_2[i]);
 }
 /*
 #include <libc.h>
 int main(int ac, char **av)
 {
 	(void) ac;
+	(void) av;
 
-	printf("%s\n", ft_memmove(av[1], av[2], atoi(av[3])));
-	printf("%s\n", memmove(av[1], av[2], atoi(av[3])));
-}*/
+	printf("%d\n", ft_memcmp(av[1], av[2], atoi(av[3])));
+	printf("%d\n", memcmp(av[1], av[2], atoi(av[3])));
+
+}
+*/

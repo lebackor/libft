@@ -6,19 +6,19 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:33:04 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/01 21:38:44 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/02 14:37:58 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	if (*to_find == '\0')
-		return (str);
+		return ((char *)str);
 	while (str[i] != '\0' && i < len)
 	{
 		j = 0;
@@ -26,7 +26,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		{
 			j++;
 			if (to_find[j] == '\0')
-				return (&str[i]);
+				return ((char *)&str[i]);
 		}
 		i++;
 	}

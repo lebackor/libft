@@ -6,11 +6,11 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:27:25 by lebackor          #+#    #+#             */
-/*   Updated: 2021/11/30 19:01:21 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:23:10 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-size_t ft_strlen(char *str)
+size_t ft_strlen(const char *str)
 {
 	int i;
 

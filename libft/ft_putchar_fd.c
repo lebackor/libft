@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:32:26 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/02 14:50:54 by lebackor         ###   ########.fr       */
+/*   Created: 2021/12/02 19:19:17 by lebackor          #+#    #+#             */
+/*   Updated: 2021/12/02 19:31:34 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlcpy(char  *dest, const char  *src, size_t size)
-{
-	size_t	i;
-	size_t	k;
 
-	i = 0;
-	k = 0;
-	if (size != 0)
-	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	while (src[k] != '\0')
-		k++;
-	return (k);
+void ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
+/*
+int main()
+{
+	int fd = open("test.txt", O_WRONLY);
+	ft_putchar_fd('e', fd);
+}*/

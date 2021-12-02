@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:32:26 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/02 14:50:54 by lebackor         ###   ########.fr       */
+/*   Created: 2021/12/02 15:44:24 by lebackor          #+#    #+#             */
+/*   Updated: 2021/12/02 16:29:43 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlcpy(char  *dest, const char  *src, size_t size)
-{
-	size_t	i;
-	size_t	k;
 
-	i = 0;
-	k = 0;
-	if (size != 0)
+char *ft_strjoin(char const *s1, char const *s2)
+{
+	int a;
+	int b;
+	size_t i;
+	char *str;
+	
+	if (!s1 || !s2)
+		return (NULL);
+	i = 0;	
+	a = ft_strlen(s1);
+	b = ft_strlen(s2);
+	str = ft_calloc(a + b + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	while (s1[i])
 	{
-		while (src[i] != '\0' && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		str[i] = s1[i];
+		i++;
 	}
-	while (src[k] != '\0')
-		k++;
-	return (k);
+	i = 0;
+	while (s2[i])
+	{
+		str[a] = s2[i];
+		i++;
+		a++;
+	}
+	return (str);
 }
