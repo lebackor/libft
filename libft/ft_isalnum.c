@@ -6,14 +6,13 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:06:55 by lebackor          #+#    #+#             */
-/*   Updated: 2021/11/23 16:21:08 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/03 12:25:14 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isalnum(int a)
+int	ft_isalnum(int a)
 {
-
 	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122) || (a >= '0' && a <= '9'))
 		return (1);
 	else

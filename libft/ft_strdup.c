@@ -6,17 +6,17 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 12:58:31 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/02 13:29:08 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/03 12:53:30 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(char *s1)
+char	*ft_strdup(char *s1)
 {
-	size_t a;
-	size_t i;
-	char *s2;
+	size_t	a;
+	size_t	i;
+	char	*s2;
 
 	i = 0;
 	a = ft_strlen(s1);

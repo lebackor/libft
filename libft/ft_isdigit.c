@@ -6,11 +6,12 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:59:59 by lebackor          #+#    #+#             */
-/*   Updated: 2021/11/23 16:06:44 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/03 12:25:52 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-int ft_isdigit(int a)
+
+int	ft_isdigit(int a)
 {
 	if (a >= '0' && a <= '9')
 		return (1);

@@ -6,15 +6,15 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 18:00:53 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/02 19:18:46 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/03 13:30:10 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char *ft_fill_tab(int i, long long nb, int sign)
+//#include <libc.h>
+char	*ft_fill_tab(int i, long long nb, int sign)
 {
-	char *str;
+	char	*str;
 
 	str = ft_calloc(i + 1, sizeof(char));
 	if (!str)
@@ -29,23 +29,36 @@ char *ft_fill_tab(int i, long long nb, int sign)
 	return (str);
 }
 
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int i;
-	long long nb;
-	char *str;
+	int			i;
+	long long	nb;
+	char		*str;
+	int			sign;
 
-	i = 0;
-	nb = (long long)n;
-	while (n /= 10)
-		i++;
+	i = -1;
+	sign = 0;
+	nb = (long long) n;
 	if (nb < 0)
-	{	
-		nb *= -1;
-		str = ft_fill_tab(i + 2, nb, 1);
+	{
+		sign++;
+		i++;
+		nb = -nb;
 	}
-	else
-		str = ft_fill_tab(i + 1, nb, 0);
+	while (n)
+	{
+		n = n / 10;
+		i++;
+	}
+	if (nb == 0)
+		i = 0;
+	str = ft_fill_tab(i + 1, nb, sign);
 	return (str);
 }
+/*
+int main(int ac, char **av)
+{
+	(void) ac;
+
+	printf("%s\n", ft_itoa(atoi(av[1])));
+}*/

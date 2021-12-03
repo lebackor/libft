@@ -6,11 +6,11 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:21:30 by lebackor          #+#    #+#             */
-/*   Updated: 2021/11/30 18:02:23 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/03 12:25:42 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
