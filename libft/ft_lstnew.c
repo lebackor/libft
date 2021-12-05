@@ -23,17 +23,18 @@ t_list	*ft_lstnew(void *content)
 	return (t);
 }
 /*
+#include <stdio.h>
 int main()
 {
-	int i = 0;
 	t_list *a;
 	
-	a->content = (void *)5;
-	a->next = ft_lstnew((void *)8);
+	a->content = 5;
+	a->next = ft_lstnew(8);
 	a->next->next = NULL;
 	while (a)
 	{
 		printf("%d\n", (int)a->content);
 		a = a->next;
 	}
-}*/
+}
+*/

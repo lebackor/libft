@@ -31,6 +31,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 /*
+
 char f(unsigned int i, char c)
 {
 	c += i;
@@ -44,4 +45,5 @@ int main(int ac, char **av)
 	(void) ac;
 
 	printf("%s\n", ft_strmapi(av[1], f));
-}*/
+}
+*/
