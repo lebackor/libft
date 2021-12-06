@@ -2,10 +2,27 @@
 
 void ft_lstadd_back(t_list **alst, t_list *new)
 {
-    t_list *k;
-    if (!alst || !new)
+    t_list *l;
+    
+    if (!new)
         return ;
-    while (*alst)
-        k = ft_lstnew(k);
-    k->next = new;
+    l = *alst;
+    if (!*alst)
+    {
+        (*alst)= new;
+        //l->next = NULL;
+    }
+    else
+    {    
+        while(l->next)
+            l = l->next;
+        l->next = new;
+        //l->next->next = NULL;
+    }
 }
+/*
+int main()
+{
+    t_list  l;
+
+}*/
