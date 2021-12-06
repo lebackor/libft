@@ -35,7 +35,19 @@ int	count_words(char const *s, char c)
 	}
 	return (count);
 }
+/*
+void ft_free_table(char const *str)
+{
+	int i;
 
+	i = 0;
+	while (str[i])
+	{
+		free(str)
+	}
+
+}
+*/
 char	*put_str_in_tab(char const *s, char c)
 {
 	int		i;
@@ -46,7 +58,10 @@ char	*put_str_in_tab(char const *s, char c)
 		i++;
 	tab = malloc(sizeof(*tab) * (i + 1));
 	if (tab == NULL)
+	{		
+		free(tab);	
 		return (NULL);
+	}
 	i = 0;
 	while (s[i] && is_not_sep(s[i], c))
 	{
