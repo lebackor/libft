@@ -6,7 +6,7 @@
 /*   By: lebackor <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 21:11:42 by lebackor          #+#    #+#             */
-/*   Updated: 2021/12/03 12:52:37 by lebackor         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:35:09 by lebackor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,21 @@ int	count_words(char const *s, char c)
 	}
 	return (count);
 }
-/*
-void ft_free_table(char const *str)
+
+char	**ft_free_table(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		free(str)
+		free(str[i]);
+		i++;
 	}
-
+	free(str);
+	return (NULL);
 }
-*/
+
 char	*put_str_in_tab(char const *s, char c)
 {
 	int		i;
@@ -58,10 +60,7 @@ char	*put_str_in_tab(char const *s, char c)
 		i++;
 	tab = malloc(sizeof(*tab) * (i + 1));
 	if (tab == NULL)
-	{		
-		free(tab);	
 		return (NULL);
-	}
 	i = 0;
 	while (s[i] && is_not_sep(s[i], c))
 	{
@@ -91,6 +90,8 @@ char	**ft_split(char const *s, char c)
 				&& is_not_sep(s[i], c)) && s[i])
 		{
 			tab[string] = put_str_in_tab(&s[i], c);
+			if (!tab)
+				return (ft_free_table(tab));
 			string++;
 		}
 		i++;
