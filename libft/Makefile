@@ -6,7 +6,7 @@
 #    By: lebackor <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 12:08:21 by lebackor          #+#    #+#              #
-#    Updated: 2021/12/07 12:01:17 by lebackor         ###   ########.fr        #
+#    Updated: 2021/12/03 17:35:53 by lebackor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,3 +91,7 @@ fclean :	clean
 re : fclean all
 
 .PHONY: all clean fclean re
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
