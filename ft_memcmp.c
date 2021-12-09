@@ -34,15 +34,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	else
 		return (s_1[i] - s_2[i]);
 }
-/*
-#include <libc.h>
-int main(int ac, char **av)
-{
-	(void) ac;
-	(void) av;
-
-	printf("%d\n", ft_memcmp(av[1], av[2], atoi(av[3])));
-	printf("%d\n", memcmp(av[1], av[2], atoi(av[3])));
-
-}
-*/

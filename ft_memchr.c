@@ -27,14 +27,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-#include <libc.h>
-
-int main(int ac, char **av)
-{
-	(void) ac;
-	printf("%s\n", ft_memchr(av[1], atoi(av[2]), atoi(av[3])));
-	printf("%s\n", memchr(av[1], atoi(av[2]), atoi(av[3])));
-
-}
-*/

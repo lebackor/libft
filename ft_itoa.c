@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <libc.h>
+
 char	*ft_fill_tab(int i, long long nb, int sign)
 {
 	char	*str;
@@ -55,10 +55,3 @@ char	*ft_itoa(int n)
 	str = ft_fill_tab(i + 1, nb, sign);
 	return (str);
 }
-/*
-int main(int ac, char **av)
-{
-	(void) ac;
-
-	printf("%s\n", ft_itoa(atoi(av[1])));
-}*/

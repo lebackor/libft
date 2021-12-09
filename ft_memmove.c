@@ -36,12 +36,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return ((void *)d1);
 }
-/*
-#include <libc.h>
-int main(int ac, char **av)
-{
-	(void) ac;
-
-	printf("%s\n", ft_memmove(av[1], av[2], atoi(av[3])));
-	printf("%s\n", memmove(av[1], av[2], atoi(av[3])));
-}*/

@@ -30,17 +30,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return ((void *)d1);
 }
-/*#include <stdio.h>
-#include <libc.h>
-int main(int ac, char **av)
-{
-	(void) ac;
-	(void) av;
-
-	printf("%s\n", ft_memcpy(av[1], av[2], atoi(av[3])));
-	//printf("%s\n", memcpy("hello", "howareyou", 5));
-	//ft_memcpy(dest, src, 1);
-	
-//	printf("src =%s\n dest =%s\n", src, dest);
-}
-*/

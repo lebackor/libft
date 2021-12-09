@@ -72,12 +72,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		str[j++] = s1[i++];
 	return (str);
 }
-/*
-#include <libc.h>
-int main(int ac, char **av)
-{
-	(void) ac;
-
-	printf("%s\n", ft_strtrim(av[1], av[2]));
-
-}*/

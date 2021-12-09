@@ -19,17 +19,3 @@ void	ft_lstadd_front(t_list **alst, t_list *new)
 	new->next = *alst;
 	*alst = new;
 }
-/*
-#include <stdio.h>
-int main(int ac, char **av)
-{
-	(void) ac;
-
-	t_list	*a;
-
-	a->content = ft_lstnew((void *)5);
-	//printf("%d\n", a);
-	a->next = ft_lstadd_front(a, (t_list *)ft_atoi(av[1]));
-	//printf("%d\n", a);
-
-}*/
