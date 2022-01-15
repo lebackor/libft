@@ -45,9 +45,8 @@ SRCS	=	ft_bzero.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 			ft_split.c\
-
-
-SRCS_B	=	ft_lstnew.c \
+			get_next_line.c\
+			ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstadd_front.c \
 			ft_lstlast.c \
@@ -56,11 +55,10 @@ SRCS_B	=	ft_lstnew.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
 			ft_lstmap.c	\
+			ft_strcpy.c \
 
 
 OBJS	=	${SRCS:.c=.o}
-
-OBJS_B	=	${SRCS_B:.c=.o}
 
 CC	=	gcc
 
@@ -79,11 +77,8 @@ ${NAME} :	${OBJS}
 			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
-bonus:	${OBJS} ${OBJS_B}
-		ar rcs ${NAME} ${OBJS} ${OBJS_B}
-
 clean :
-		rm -f ${OBJS} ${OBJS_B}
+		rm -f ${OBJS}
 
 fclean :	clean
 			rm -f ${NAME}
@@ -91,7 +86,3 @@ fclean :	clean
 re : fclean all
 
 .PHONY: all clean fclean re
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
